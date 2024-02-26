@@ -27,9 +27,15 @@
     <ClInclude Include="headers\SleepyEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SleepyEngine.cpp">
+    <ClCompile Include="src\core\SleepyEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

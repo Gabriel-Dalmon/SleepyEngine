@@ -130,13 +130,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="headers\Entity.h" />
     <ClInclude Include="headers\framework.h" />
     <ClInclude Include="headers\Resource.h" />
     <ClInclude Include="headers\SleepyEngine.h" />
     <ClInclude Include="headers\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SleepyEngine.cpp" />
+    <ClCompile Include="src\core\Entity.cpp" />
+    <ClCompile Include="src\core\SleepyEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SleepyEngine.rc" />
