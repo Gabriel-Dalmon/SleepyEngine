@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="headers\framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="headers\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
+    <ClInclude Include="headers\Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SleepyEngine.h">
+    <ClInclude Include="headers\SleepyEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SleepyEngine.cpp">
+    <ClCompile Include="src\SleepyEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

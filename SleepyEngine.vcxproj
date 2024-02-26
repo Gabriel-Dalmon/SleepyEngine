@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>headers;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -127,13 +130,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="SleepyEngine.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="headers\framework.h" />
+    <ClInclude Include="headers\Resource.h" />
+    <ClInclude Include="headers\SleepyEngine.h" />
+    <ClInclude Include="headers\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SleepyEngine.cpp" />
+    <ClCompile Include="src\SleepyEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SleepyEngine.rc" />
