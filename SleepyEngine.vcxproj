@@ -140,6 +140,7 @@
     <ClInclude Include="headers\targetver.h" />
     <ClInclude Include="headers\MathHelper.h" />
     <ClInclude Include="headers\Shader.h" />
+    <ClInclude Include="headers\pch.h" />
     <ClInclude Include="utils\d3dx12.h" />
     <ClInclude Include="headers\Transform.h" />
   </ItemGroup>

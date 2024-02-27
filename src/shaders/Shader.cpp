@@ -4,6 +4,10 @@
 using namespace DirectX;
 
 
+Shader::Shader()
+{
+}
+
 void Shader::Release()
 {
 	delete m_pVSByteCode;
