@@ -26,6 +26,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Place code here.
+    // Allocate a console for this application
+    AllocConsole();
+
+    // Redirect standard output and error streams to the console
+    FILE* pFile;
+    freopen_s(&pFile, "CONOUT$", "w", stdout);
+    freopen_s(&pFile, "CONOUT$", "w", stderr);
+
+    Input input;
+    input.Init();
 
     // Initialize global strings
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -45,6 +55,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // Main message loop:
     while (GetMessage(&msg, nullptr, 0, 0))
     {
+        input.Update();
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
         {
             TranslateMessage(&msg);
@@ -52,6 +63,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
+    FreeConsole();
     return (int) msg.wParam;
 }
 

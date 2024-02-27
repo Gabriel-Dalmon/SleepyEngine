@@ -135,6 +135,7 @@
     <ClInclude Include="headers\Components.h" />
     <ClInclude Include="headers\Entity.h" />
     <ClInclude Include="headers\framework.h" />
+    <ClInclude Include="headers\Input.h" />
     <ClInclude Include="headers\Resource.h" />
     <ClInclude Include="headers\SleepyEngine.h" />
     <ClInclude Include="headers\targetver.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="utils\MathHelper.cpp" />
     <ClCompile Include="src\components\Components.cpp" />
     <ClCompile Include="src\core\Entity.cpp" />
+    <ClCompile Include="src\core\Input.cpp" />
     <ClCompile Include="src\core\SleepyEngine.cpp" />
     <ClCompile Include="src\core\Transform.cpp" />
   </ItemGroup>
