@@ -140,6 +140,7 @@
     <ClInclude Include="headers\targetver.h" />
     <ClInclude Include="headers\MathHelper.h" />
     <ClInclude Include="headers\Shader.h" />
+    <ClInclude Include="headers\pch.h" />
     <ClInclude Include="utils\d3dx12.h" />
     <ClInclude Include="headers\Transform.h" />
   </ItemGroup>
@@ -158,9 +159,6 @@
   <ItemGroup>
     <Image Include="SleepyEngine.ico" />
     <Image Include="small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="src\shaders\Shader.hlsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

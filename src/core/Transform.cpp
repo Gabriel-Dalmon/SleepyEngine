@@ -23,7 +23,7 @@ void Transform::Identity()
 void Transform::Rotate(float yaw, float pitch, float roll)
 {
 	XMVECTOR quat;
-	XMVECTOR rotateQuat;
+	XMVECTOR rotateQuat = XMVectorZero();
 	
 
 	//roll calcul

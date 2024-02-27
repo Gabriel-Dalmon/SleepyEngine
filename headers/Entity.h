@@ -42,9 +42,6 @@ public:
 	T GetComponent() {
 		for (int i = 0; i < m_componentsList.size(); i++)
 		{
-			// TO DO: Code pour trouver le bon component dans m_componentsList
-			// si trouvé -> le retourner 
-			// sinon en bas
 			if (m_componentsList[i] == T)
 			{
 				return m_componentsList[i];

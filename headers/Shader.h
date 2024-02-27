@@ -1,9 +1,12 @@
 #pragma once
+#include "pch.h"
+#include <string>
+#include "d3dcommon.h"
 
-struct Vertex {
-	XMFLOAT3 Pos;
-	XMFLOAT4 Color;
-};
+//struct Vertex {
+//	XMFLOAT3 Pos;
+//	XMFLOAT4 Color;
+//};
 
 class Shader
 {
