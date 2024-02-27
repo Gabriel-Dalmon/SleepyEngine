@@ -135,10 +135,12 @@
     <ClInclude Include="headers\Resource.h" />
     <ClInclude Include="headers\SleepyEngine.h" />
     <ClInclude Include="headers\targetver.h" />
+    <ClInclude Include="headers\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Entity.cpp" />
     <ClCompile Include="src\core\SleepyEngine.cpp" />
+    <ClCompile Include="src\core\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SleepyEngine.rc" />
