@@ -30,6 +30,9 @@
     <ClInclude Include="headers\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="utils\d3dx12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\SleepyEngine.cpp">
