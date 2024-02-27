@@ -4,14 +4,9 @@ Entity::Entity()
 {
 }
 
-void Entity::AddComponent(Component* component)
+void Entity::Init()
 {
-	for (int i = 0; i < m_componentsList.size(); i++)
-	{
-		if (m_componentsList[i] == component)
-			return;
-	}
-	m_componentsList.push_back(component);
+	// AddComponent<Transform>();
 }
 
 void Entity::Clear()

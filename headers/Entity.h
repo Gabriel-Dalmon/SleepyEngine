@@ -10,10 +10,19 @@ public:
 	~Entity() {};
 
 	// INIT
-	// void Init();
+	void Init();
 
 	// SETTER / GETTER
-	void AddComponent(Component* component);
+	template<typename T>
+	void AddComponent()
+	{
+		for (int i = 0; i < m_componentsList.size(); i++)
+		{
+			if (m_componentsList[i] == T)
+				return;
+		}
+		m_componentsList.push_back(T);
+	}
 
 	template<typename T>
 	void RemoveComponent()
