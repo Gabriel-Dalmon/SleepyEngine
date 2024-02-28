@@ -11,6 +11,7 @@
 #define __D3DX12_H__
 
 #include "d3d12.h"
+#include <stdexcept>
 
 #if defined( __cplusplus )
 
@@ -727,7 +728,10 @@ struct CD3DX12_ROOT_DESCRIPTOR_TABLE : public D3D12_ROOT_DESCRIPTOR_TABLE
         UINT numDescriptorRanges,
         _In_reads_opt_(numDescriptorRanges) const D3D12_DESCRIPTOR_RANGE* _pDescriptorRanges)
     {
-        Init(numDescriptorRanges, _pDescriptorRanges);
+        if( _pDescriptorRanges != nullptr )
+			Init(numDescriptorRanges, _pDescriptorRanges);
+		else
+			throw std::invalid_argument("Descriptor ranges must not be nullptr.");
     }
 
     inline void Init(

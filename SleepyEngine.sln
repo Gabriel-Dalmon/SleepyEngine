@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SleepyEngine", "SleepyEngine.vcxproj", "{C325285F-4CA2-46DF-88BC-476037317CFC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\Game\Game.vcxproj", "{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{C325285F-4CA2-46DF-88BC-476037317CFC}.Release|x64.Build.0 = Release|x64
 		{C325285F-4CA2-46DF-88BC-476037317CFC}.Release|x86.ActiveCfg = Release|Win32
 		{C325285F-4CA2-46DF-88BC-476037317CFC}.Release|x86.Build.0 = Release|Win32
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Debug|x64.ActiveCfg = Debug|x64
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Debug|x64.Build.0 = Debug|x64
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Debug|x86.ActiveCfg = Debug|Win32
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Debug|x86.Build.0 = Debug|Win32
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Release|x64.ActiveCfg = Release|x64
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Release|x64.Build.0 = Release|x64
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Release|x86.ActiveCfg = Release|Win32
+		{E4B4AE30-EF50-4D74-83A0-78D2346AADE3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
