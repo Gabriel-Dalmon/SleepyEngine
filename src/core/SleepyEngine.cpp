@@ -46,15 +46,16 @@ void SleepyEngine::InitD3D()
 void SleepyEngine::EnableAdditionalD3D12Debug()
 {
     ID3D12Debug* pDebugController;
-    int hr = D3D12GetDebugInterface(__uuidof(ID3D12Device), (void**) & pDebugController); //should throw error
+    HRESULT hr = D3D12GetDebugInterface(__uuidof(ID3D12Debug), (void**) &pDebugController); //should throw error
+    std::cout << "hr: " << hr << "|" << pDebugController << std::endl;
     pDebugController->EnableDebugLayer();
 }
 
 void SleepyEngine::CreateDevice()
 {
+    CreateDXGIFactory1(__uuidof(IDXGIFactory1),(void**) & m_pDxgiFactory);
     D3D12CreateDevice(nullptr, D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), (void**)&m_pDevice);
     //if failed, check book for "WARP_Adapters".
-
 }
 
 void SleepyEngine::CreateFence()
@@ -88,9 +89,9 @@ void SleepyEngine::CreateCommandObjects()
     D3D12_COMMAND_QUEUE_DESC queueDesc = {};
     queueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
     queueDesc.Flags = D3D12_COMMAND_QUEUE_FLAG_NONE;
-    iResult = m_pDevice->CreateCommandQueue(&queueDesc, __uuidof(ID3D12Device), (void**) &m_pCommandQueue);
-    iResult = m_pDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, __uuidof(ID3D12Device), (void**)&m_pDirectCmdListAlloc);
-    iResult = m_pDevice->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_pDirectCmdListAlloc, nullptr, __uuidof(ID3D12Device), (void**)&m_pCommandList);
+    iResult = m_pDevice->CreateCommandQueue(&queueDesc, __uuidof(ID3D12CommandQueue), (void**) &m_pCommandQueue);
+    iResult = m_pDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, __uuidof(ID3D12CommandAllocator), (void**)&m_pDirectCmdListAlloc);
+    iResult = m_pDevice->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_pDirectCmdListAlloc, nullptr, __uuidof(ID3D12CommandList), (void**)&m_pCommandList);
     m_pCommandList->Close();
 }
 
@@ -114,7 +115,7 @@ void SleepyEngine::CreateSwapChain()
     swapChainDescriptor.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
     swapChainDescriptor.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
 
-    m_pDxgiFactory->CreateSwapChain(m_pCommandList, &swapChainDescriptor, &m_pSwapChain);
+    m_pDxgiFactory->CreateSwapChain(m_pCommandQueue, &swapChainDescriptor, &m_pSwapChain); //CreateSwapChainForHwnd()
 }
 
 void SleepyEngine::CreateDescriptorHeaps()
@@ -139,7 +140,7 @@ void SleepyEngine::CreateRenderTargetView()
     ID3D12Resource* m_pSwapChainBuffer[SWAP_CHAIN_BUFFER_COUNT]; // must be freed when finished
     CD3DX12_CPU_DESCRIPTOR_HANDLE rtvHeapHandle(m_pRtvHeap->GetCPUDescriptorHandleForHeapStart());
 
-    for (UINT i = 0; i < SWAP_CHAIN_BUFFER_COUNT; ++i)
+    for (UINT i = 0; i < SWAP_CHAIN_BUFFER_COUNT; i++)
     {
 		m_pSwapChain->GetBuffer(i, __uuidof(ID3D12Resource), (void**)&m_pSwapChainBuffer);
 		m_pDevice->CreateRenderTargetView(m_pSwapChainBuffer[i], nullptr, rtvHeapHandle);

@@ -47,15 +47,15 @@ private:
     WCHAR m_szTitle[MAX_LOADSTRING];                  // The title bar text
     WCHAR m_szWindowClass[MAX_LOADSTRING];            // the main window class name
 
-    ID3D12Device* m_pDevice;
-    ID3D12Fence* m_pFence;
+    ID3D12Device* m_pDevice = nullptr;
+    ID3D12Fence* m_pFence = nullptr;
 
     UINT m_rtvDescriptorSize = 0;
     UINT m_dsvDescriptorSize = 0;
     UINT m_cbvSrvUavDescriptorSize = 0;
 
-    ID3D12DescriptorHeap* m_pRtvHeap;
-    ID3D12DescriptorHeap* m_pDsvHeap;
+    ID3D12DescriptorHeap* m_pRtvHeap = nullptr;
+    ID3D12DescriptorHeap* m_pDsvHeap = nullptr;
 
     DXGI_FORMAT m_backBufferFormat = DXGI_FORMAT_R8G8B8A8_UNORM;
     int m_currentBackBuffer = 0;
@@ -63,13 +63,13 @@ private:
     UINT m_4xMsaaQuality = 0;
     bool m_4xMsaaState = false;
 
-    ID3D12Resource* m_pDepthStencilBuffer;
+    ID3D12Resource* m_pDepthStencilBuffer = nullptr;
 
-    ID3D12CommandQueue* m_pCommandQueue;
-    ID3D12CommandAllocator* m_pDirectCmdListAlloc;
-    ID3D12GraphicsCommandList* m_pCommandList;
+    ID3D12CommandQueue* m_pCommandQueue = nullptr;
+    ID3D12CommandAllocator* m_pDirectCmdListAlloc = nullptr;
+    ID3D12GraphicsCommandList* m_pCommandList = nullptr;
 
-    IDXGIFactory4* m_pDxgiFactory;
+    IDXGIFactory4* m_pDxgiFactory = nullptr;
     IDXGISwapChain* m_pSwapChain = nullptr;
 
     int m_clientWidth;
